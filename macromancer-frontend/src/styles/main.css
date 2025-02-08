@@ -1,0 +1,89 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Very dark gray */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white; /* White text */
+}
+
+/* Main Container */
+.container {
+  text-align: center;
+  background: #1e1e1e; /* Regular dark gray */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.7); /* Neon purple glow */
+  width: 500px;
+}
+
+/* Headings */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+/* Upload Buttons */
+.upload-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 2px dashed #777; /* Lighter gray border */
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white; /* White text */
+}
+
+.upload-btn:hover {
+  background: #292929;
+}
+
+/* Input Field */
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background: #292929;
+  color: white;
+}
+
+/* Analyze Button */
+button {
+  background: #8a2be2; /* Purple */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #6a1bbd; /* Darker purple */
+}
+
+/* Warning Text */
+p {
+  font-size: 12px;
+  color: #ccc; /* Lighter gray */
+  margin-top: 10px;
+}
