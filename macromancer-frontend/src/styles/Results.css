@@ -1,0 +1,23 @@
+.results {
+    text-align: center;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Adds spacing between charts */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+  }
+  
+  .macro-chart {
+    text-align: center;
+    width: 300px;
+  }
+  
+  .macro-label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  
