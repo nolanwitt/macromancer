@@ -23,10 +23,21 @@ Before you begin, ensure that you have the following installed on your local mac
 
 ## Setting Up the Application
 
-1. **Clone the Repository**
+ **Clone the Repository**
 
-   First, clone the repository to your local machine:
+   First, clone the repository to your local machine.
+   
+# Install Dependencies
 
-   ```bash
-   git clone https://github.com/your-username/macromancer.git
-   cd macromancer
+The project is split into two main parts: the **frontend** (React/Vite) and the **backend** (Node.js/Express). To set up the project, you'll need to install dependencies for both parts.
+
+## Frontend (React/Vite)
+
+Navigate to the `macromancer-frontend` directory and install dependencies.
+      Run `npm run dev`
+Navigate to the `macromancer-backend` directory and install dependencies.
+      Add your OpenAI key to `.env`
+      Run `node server.js`
+
+After following these steps Macromancer will be opened in your local host!
+
