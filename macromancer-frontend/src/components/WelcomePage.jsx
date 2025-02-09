@@ -17,33 +17,12 @@ const WelcomePage = () => {
         {/* Input Fields */}
         <div className="input-group">
           <label>
-<<<<<<< Updated upstream
-            Height:
+            Height (in):
             <input type="number" placeholder="Enter height" />
           </label>
           <label>
-            Weight:
-            <input type="number" placeholder="Enter weight" />
-=======
-            Height (in):
-            <input
-              type="number"
-              name="height"
-              value={userData.height}
-              onChange={onUserDataChange}
-              placeholder="Enter height"
-            />
-          </label>
-          <label>
             Weight (lbs):
-            <input
-              type="number"
-              name="weight"
-              value={userData.weight}
-              onChange={onUserDataChange}
-              placeholder="Enter weight"
-            />
->>>>>>> Stashed changes
+            <input type="number" placeholder="Enter weight" />
           </label>
           <label>
             Age:
