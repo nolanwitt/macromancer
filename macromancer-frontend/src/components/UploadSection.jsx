@@ -100,9 +100,8 @@ const UploadSection = ({ onAnalyze }) => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-
+        {error && <p className="error-message">{error}</p>}
         <div className="voltage-button">
-          {error && <p className="error-message">{error}</p>}
           <button onClick={handleAnalyze}>Analyze</button>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 234.6 61.3" preserveAspectRatio="none" xml:space="preserve">
             <filter id="glow">
