@@ -4,19 +4,45 @@ import UploadSection from "./components/UploadSection";
 const App = () => {
   const [result, setResult] = useState(null);
 
-  // Function to handle the data received from UploadSection
-  const handleAnalyze = ({ image, description }) => {
+  const handleAnalyze = async ({ image, description }) => {
     console.log("Image received:", image);
     console.log("Description received:", description);
 
-    // For now, just log the data and set it in state
-    setResult({ image, description });
+    const formData = new FormData();
+
+    // Convert image URL to file (handle both file upload & camera capture)
+    const response = await fetch(image);
+    const blob = await response.blob();
+    formData.append("image", blob, "food_image.jpg");
+    formData.append("description", description);
+
+    try {
+      const res = await fetch("http://localhost:3000/analyze-food", {
+        method: "POST",
+        body: formData
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch macro breakdown.");
+      }
+
+      const data = await res.json();
+      console.log("Macro Breakdown:", data);
+      setResult(data); // Update state to display macro results
+    } catch (error) {
+      console.error("Error analyzing food:", error);
+    }
   };
 
-  /*Image and desc recieved, enter load, then display */
   return (
     <div>
       <UploadSection onAnalyze={handleAnalyze} />
+      {result && (
+        <div className="results">
+          <h2>Macro Breakdown</h2>
+          <pre>{JSON.stringify(result, null, 2)}</pre>
+        </div>
+      )}
     </div>
   );
 };
