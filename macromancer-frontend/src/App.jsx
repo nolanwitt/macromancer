@@ -13,20 +13,10 @@ const App = () => {
     setResult({ image, description });
   };
 
+  /*Image and desc recieved, enter load, then display */
   return (
     <div>
       <UploadSection onAnalyze={handleAnalyze} />
-      {result && (
-        <div>
-          <h2>Received Data:</h2>
-          <p>Description: {result.description}</p>
-          <img
-            src={result.image}
-            alt="Uploaded"
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
-        </div>
-      )}
     </div>
   );
 };
