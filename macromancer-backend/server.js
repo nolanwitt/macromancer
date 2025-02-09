@@ -67,6 +67,7 @@ app.post("/analyze-food", upload.single("image"), async (req, res) => {
                 { type: "image_url", image_url: { url: `data:image/jpeg;base64,${base64Image}` } }  
             ]}
           ],
+          response_format: {type: "json_object"},
           max_tokens: 300
         },
         {
