@@ -11,8 +11,10 @@ const UploadSection = ({ onAnalyze }) => {
     const file = e.target.files[0];
     if (file) {
       setImage(URL.createObjectURL(file));
+      e.target.value = ""; // Reset the file input so selecting the same file triggers change
     }
   };
+  
 
   const handleTakePhoto = () => {
     setShowCamera(true);
@@ -44,21 +46,6 @@ const UploadSection = ({ onAnalyze }) => {
       console.error("Please provide both an image and a description.");
       return;
     }
-
-    // Save description as a text file
-    const descriptionBlob = new Blob([description], { type: "text/plain" });
-    const descriptionUrl = URL.createObjectURL(descriptionBlob);
-    const descriptionLink = document.createElement("a");
-    descriptionLink.href = descriptionUrl;
-    descriptionLink.download = "description.txt";
-    descriptionLink.click();
-
-    // Save image as a PNG file
-    const imageUrl = image;
-    const imageLink = document.createElement("a");
-    imageLink.href = imageUrl;
-    imageLink.download = "image.png";
-    imageLink.click();
 
     // Call the onAnalyze prop if provided
     if (onAnalyze) {
