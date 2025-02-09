@@ -4,18 +4,26 @@ const UploadSection = ({ onAnalyze }) => {
   const [image, setImage] = useState(null);
   const [description, setDescription] = useState("");
   const [showCamera, setShowCamera] = useState(false);
+  const [error, setError] = useState("");
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    //setShowCamera(false);
     if (file) {
       setImage(URL.createObjectURL(file));
       e.target.value = ""; // Reset the file input so selecting the same file triggers change
     }
   };
-  
 
+  const handleExitCamera = () => {
+    setShowCamera(false);
+    if (videoRef.current?.srcObject) {
+      videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+    }
+  };
+  
   const handleTakePhoto = () => {
     setShowCamera(true);
     navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
@@ -43,9 +51,11 @@ const UploadSection = ({ onAnalyze }) => {
 
   const handleAnalyze = () => {
     if (!image || !description) {
-      console.error("Please provide both an image and a description.");
+      setError("⚠️ Please provide both an image and a description.");
       return;
     }
+
+    setError(""); // Clear any previous errors
 
     // Call the onAnalyze prop if provided
     if (onAnalyze) {
@@ -79,7 +89,8 @@ const UploadSection = ({ onAnalyze }) => {
         {showCamera && (
           <div className="camera-section">
             <video ref={videoRef} autoPlay playsInline />
-            <button onClick={capturePhoto}>Capture</button>
+            <button className="capture-btn" onClick={capturePhoto}>Capture</button>
+            <button className="exit-camera-btn" onClick={handleExitCamera} style={{ marginLeft: "20px" }}>Exit Camera</button>
             <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
           </div>
         )}
@@ -95,6 +106,7 @@ const UploadSection = ({ onAnalyze }) => {
         />
 
         <div className="voltage-button">
+          {error && <p className="error-message">{error}</p>} {/* Show warning */}
           <button onClick={handleAnalyze}>Analyze</button>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 234.6 61.3" preserveAspectRatio="none" xml:space="preserve">
             <filter id="glow">

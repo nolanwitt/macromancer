@@ -429,3 +429,48 @@ p {
 .brutalist-button:active .button-text {
   transform: scale(0.95);
 }
+
+/* The img preview. */
+img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* The buttons for the camera. */
+.capture-btn, .exit-camera-btn {
+  position: relative;
+}
+
+.exit-camera-btn, .capture-btn button,
+.capture-btn, .exit-camera-btn button {
+  color: white;
+  background: #0D1127;
+  padding: 8px 12px;
+  border-radius: 3rem;
+  border: 2px solid rgba(138, 43, 226, 0.7);
+  font-size: 14px;
+  line-height: 1em;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+/* Camera Size */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjust as needed */
+  max-width: 500px; /* Set max width */
+  height: auto; /* Maintain aspect ratio */
+  margin: auto;
+}
+
+video {
+  width: 100%; /* Adjust size */
+  max-width: 500px; /* Change this value to control size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: rounded edges */
+  border: 2px solid rgba(138, 43, 226, 0.7); /* Optional: border styling */
+}
