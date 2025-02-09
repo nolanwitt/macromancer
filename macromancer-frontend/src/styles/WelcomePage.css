@@ -1,0 +1,54 @@
+/* Overall Container */
+.welcome-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the content */
+  background-color: #121212;
+  font-family: "Arial", sans-serif;
+  color: white;
+  padding-top: 20px;
+}
+
+/* Main Content Styling */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  margin-top: 100px;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+input {
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.crystal-ball-wrapper {
+  background: transparent;
+  border: none !important;
+}
