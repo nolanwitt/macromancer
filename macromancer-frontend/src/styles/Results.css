@@ -1,34 +1,23 @@
-/* results.css */
-
 .results {
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards;
-    padding: 20px;
     text-align: center;
   }
   
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px); /* Optional: slight slide-up effect */
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .charts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Adds spacing between charts */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
   }
   
-  .results h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+  .macro-chart {
+    text-align: center;
+    width: 300px;
   }
   
-  .results pre {
-    background-color: #f5f5f5;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: left;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .macro-label {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
   }
   
