@@ -25,7 +25,7 @@ const WelcomePage = ({ userData, onUserDataChange }) => {
         {/* Input Fields */}
         <div className="input-group">
           <label>
-            Height:
+            Height (in):
             <input
               type="number"
               name="height"
@@ -35,7 +35,7 @@ const WelcomePage = ({ userData, onUserDataChange }) => {
             />
           </label>
           <label>
-            Weight:
+            Weight (lbs):
             <input
               type="number"
               name="weight"
